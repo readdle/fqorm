@@ -69,6 +69,9 @@ abstract class AbstractMapper
             if ($field->mapToObject !== null) {
                 $value = ($field->mapToObject)($value);
             }
+            if ($field->isAutoincrement) {
+                $value = intval($value);
+            }
             $obj->{$field->propName} = $value;
         }
         return $obj;
