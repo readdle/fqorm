@@ -52,7 +52,7 @@ class FieldMap
      */
     public static function idMap(string $idFieldName): FieldMap
     {
-        $obj = new static($idFieldName, '');
+        $obj = new FieldMap($idFieldName, '');
         $obj->isAutoincrement = true;
         return $obj;
     }
@@ -72,7 +72,7 @@ class FieldMap
         bool $useDefault = true,
         bool $alwaysReload = false
     ): FieldMap {
-        $obj = new static($sqlName, $propName, [static::class, 'SQLToDateTime'], [static::class, 'dateTimeToSQL']);
+        $obj = new FieldMap($sqlName, $propName, [static::class, 'SQLToDateTime'], [static::class, 'dateTimeToSQL']);
         $obj->useDefault = $useDefault;
         $obj->alwaysReload = $alwaysReload;
         return $obj;
@@ -91,7 +91,7 @@ class FieldMap
             return null;
         }
 
-        return $dateTime->format(static::MYSQL_DATETIME_FORMAT);
+        return $dateTime->format(FieldMap::MYSQL_DATETIME_FORMAT);
     }
 
     /**
@@ -104,7 +104,8 @@ class FieldMap
     public static function SQLToDateTime(string $dateTime): ?DateTime
     {
         try {
-            return DateTime::createFromFormat(static::MYSQL_DATETIME_FORMAT, $dateTime);
+            $retval = DateTime::createFromFormat(FieldMap::MYSQL_DATETIME_FORMAT, $dateTime);
+            return $retval === false ? null : $retval;
         } catch (Exception $e) {
             return null;
         }

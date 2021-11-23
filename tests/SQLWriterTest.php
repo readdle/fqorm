@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 use Readdle\Database\ORM\FieldMap;
 use Readdle\Database\ORM\SQLWriter;
 
-
 class SQLWriterTest extends TestCase
 {
     public function testSelect()

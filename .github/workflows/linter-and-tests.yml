@@ -39,8 +39,7 @@ jobs:
           restore-keys: ${{ runner.os }}-composer-
 
       - name: Install Composer dependencies
-        run: |
-          composer install --no-progress --prefer-dist
-          composer run register-standards
+        run: composer install --no-progress --prefer-dist
+
       - name: Run Tests
         run: composer run-script ci

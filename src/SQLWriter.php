@@ -17,7 +17,7 @@ class SQLWriter
         $this->tableName = $tableName;
     }
 
-    public function setTableName(string $tableName)
+    public function setTableName(string $tableName): void
     {
         $this->tableName = $tableName;
     }
@@ -161,7 +161,7 @@ class SQLWriter
     }
 
 
-    private function resetArgsIdx()
+    private function resetArgsIdx(): void
     {
         $this->idx = 0;
     }

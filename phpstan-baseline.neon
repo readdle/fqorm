@@ -1,0 +1,12 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Readdle\\\\Database\\\\ORM\\\\AbstractMapper\\:\\:newObject\\(\\) should return Readdle\\\\Database\\\\ORM\\\\EntityInterface but returns object\\.$#"
+			count: 1
+			path: src/AbstractMapper.php
+
+		-
+			message: "#^Method Readdle\\\\Database\\\\ORM\\\\FieldMap\\:\\:datetimeMap\\(\\) should return static\\(Readdle\\\\Database\\\\ORM\\\\FieldMap\\) but returns Readdle\\\\Database\\\\ORM\\\\FieldMap\\.$#"
+			count: 1
+			path: src/FieldMap.php
+
