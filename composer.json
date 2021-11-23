@@ -1,0 +1,25 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Readdle\\Database\\ORM\\" : "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Readdle\\Database\\ORM\\Tests\\" : "tests/"
+    }
+  },
+  "name" : "readdle/fqorm",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Simple ORM",
+  "require": {
+    "php" : ">=7.4",
+    "readdle/fqdb": "^4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9",
+    "phpstan/phpstan": "^1.2",
+    "friendsofphp/php-cs-fixer": "^3.3"
+  }
+}
