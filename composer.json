@@ -14,7 +14,7 @@
   "license": "MIT",
   "description": "Simple ORM",
   "require": {
-    "php" : ">=7.4",
+    "php" : ">=8.0",
     "readdle/fqdb": "^4.0"
   },
   "require-dev": {
